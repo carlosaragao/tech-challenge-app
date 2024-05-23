@@ -22,5 +22,6 @@ data class ClientEntity(
     var email: String,
 
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
+//    var orders: MutableList<OrderEntity> = mutableListOf()
     var orders: List<OrderEntity> = listOf()
 )
