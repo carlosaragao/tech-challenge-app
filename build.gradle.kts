@@ -26,7 +26,6 @@ repositories {
 
 val kotlinLoggingVersion = "3.0.5"
 val mockkVersion = "1.13.11"
-val oracleJdbcVersion = "19.3.0.0"
 val springCloudVersion = "2023.0.1"
 val springMockk = "4.0.2"
 
