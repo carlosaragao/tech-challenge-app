@@ -51,6 +51,8 @@ dependencies {
 
 	implementation("org.postgresql:postgresql:42.3.3")
 
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+
 	testImplementation("com.h2database:h2")
 	testImplementation("com.ninja-squad:springmockk:$springMockk")
 	testImplementation("com.tngtech.archunit:archunit-junit5:1.3.0")

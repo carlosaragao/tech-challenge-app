@@ -7,7 +7,7 @@ import br.com.fiap.techfood.core.port.input.ClientInputPort
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/api/clients")
 class ClientResource(
     private val clientInput: ClientInputPort
 ) {
