@@ -1,11 +1,15 @@
 # Use OpenJDK 17 as base image
 FROM openjdk:17
 
+RUN groupadd -r appgroup && useradd -r -g appgroup appuser
+
+USER appuser:appgroup
+
 # Set working directory
 WORKDIR /app
 
 # Copy the compiled JAR file into the container
-#COPY target/techfood-0.0.1-SNAPSHOT.jar /app/techfood-0.0.1-SNAPSHOT.jar
+COPY target/techfood-0.0.1-SNAPSHOT.jar .
 
 # Expose the port your application runs on
 EXPOSE 8080
