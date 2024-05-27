@@ -15,16 +15,3 @@ data class OrderItemPk(
     @JoinColumn(name = "product_id",  foreignKey = ForeignKey(name = "fk_order_item_product"))
     var product: ProductEntity? = null
 )
-//    : Serializable {
-//
-//    override fun equals(o: Any?): Boolean {
-//        if (this === o) return true
-//        if (o == null || javaClass != o.javaClass) return false
-//        val that = o as OrderItemPk
-//        return order == that.order && product == that.product
-//    }
-//
-//    override fun hashCode(): Int {
-//        return Objects.hash(order, product)
-//    }
-//}
