@@ -8,6 +8,7 @@ import br.com.fiap.techfood.core.common.annotation.PersistenceAdapter
 import br.com.fiap.techfood.core.domain.Client
 import br.com.fiap.techfood.core.domain.vo.ClientVO
 import br.com.fiap.techfood.core.port.output.ClientOutputPort
+import java.util.*
 
 @PersistenceAdapter
 class ClientPersistenceService(
@@ -22,9 +23,23 @@ class ClientPersistenceService(
         return clientRepository.findClientByCpf(clientCpf)?.toClientVO()
     }
 
+    override fun findClientById(clientId: UUID): Client? {
+        return clientRepository.findById(clientId).orElse(null)?.toDomain()
+    }
+
+    override fun findAll(): List<Client> {
+        return clientRepository.findAll().map { it.toDomain() }
+    }
+
     override fun persist(client: Client): Client {
         val clientEntity = client.toEntity()
         val savedEntity = clientRepository.save(clientEntity)
         return savedEntity.toDomain()
     }
+
+    override fun delete(client: Client) {
+        val clientEntity = client.toEntity()
+        clientRepository.delete(clientEntity)
+    }
+
 }

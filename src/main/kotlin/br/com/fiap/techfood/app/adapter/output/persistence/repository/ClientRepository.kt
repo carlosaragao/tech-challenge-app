@@ -6,4 +6,5 @@ import java.util.*
 
 interface ClientRepository : JpaRepository<ClientEntity, UUID> {
     fun findClientByCpf(clientCpf: String): ClientEntity?
+    fun findByCpf(cpf: String): ClientEntity?
 }

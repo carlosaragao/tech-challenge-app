@@ -9,8 +9,7 @@ import java.util.*
 @Table(name = "TB_CLIENTS")
 data class ClientEntity(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: UUID? = null,
+    var id: UUID,
 
     @Column(nullable = false, unique = true)
     var cpf: String,
@@ -22,6 +21,5 @@ data class ClientEntity(
     var email: String,
 
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
-//    var orders: MutableList<OrderEntity> = mutableListOf()
     var orders: List<OrderEntity> = listOf()
 )

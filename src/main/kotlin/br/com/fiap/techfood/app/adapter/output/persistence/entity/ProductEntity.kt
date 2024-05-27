@@ -1,15 +1,18 @@
 package br.com.fiap.techfood.app.adapter.output.persistence.entity
 
-import br.com.fiap.techfood.core.domain.enums.CategoryEnum
-import jakarta.persistence.*
+import br.com.fiap.techfood.core.common.annotation.NoArgsConstructor
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.math.BigDecimal
 import java.util.*
 
 @Entity
+@NoArgsConstructor
 @Table(name = "TB_PRODUCTS")
 class ProductEntity(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     var id: UUID? = null,
 
     @Column(nullable = false)
@@ -22,7 +25,7 @@ class ProductEntity(
     var price: BigDecimal? = null,
 
     @Column(nullable = false)
-    var category: CategoryEnum,
+    var category: Int? = null,
 
     @Column(nullable = false)
     var imageURL: String? = null

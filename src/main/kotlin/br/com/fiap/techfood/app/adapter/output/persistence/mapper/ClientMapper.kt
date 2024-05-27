@@ -6,6 +6,7 @@ import br.com.fiap.techfood.core.domain.vo.ClientVO
 
 fun Client.toEntity(): ClientEntity =
     ClientEntity(
+        id = this.id,
         cpf = this.cpf,
         name = this.name,
         email = this.email,
@@ -13,6 +14,7 @@ fun Client.toEntity(): ClientEntity =
 
 fun ClientEntity.toDomain(): Client =
     Client(
+        id = this.id,
         cpf = this.cpf,
         name = this.name,
         email = this.email,
