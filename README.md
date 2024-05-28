@@ -14,24 +14,20 @@ Autores membros do Grupo:
 
 Em geral os clientes e administradores usarão o sistema, que dependerá de um serviço de pagamento externo.
 
->> IMAGEM DO DIAGRAMA DE CONTEXTO AQUI
-
 [Documentação](docs/requirements.md) para conhecer todos os requisitos.
 
 ### Domain-Driven Development (DDD)
 
 A abordagem utilizada para o desenvolvimento foi a DDD, com as seguintes saídas documentadas:
 
-- Glossário ubíquo (ToDo)
-- Event storming (ToDo)
-- Storytelling (ToDo)
-- Mapa de Contexto (ToDo)
+- Glossário ubíquo
+- Event storming
+- Storytelling
+- Mapa de Contexto
 
 ### Arquitetura
 
-O sistema expõe RESTful APIs para aplicações front-end, como terminais de autoatendimento para clientes e interfaces para administradores. Tem como dependência um provedor externo de pagamento, o MercadoPago. As decisões de arquitetura foram documentadas como Architecture Decision Records (ADRs) em [`/docs/adr`](docs/adr).
-
->> IMAGEM DO DIAGRAMA DE CONTEINER AQUI, INCLUIR EM docs/diagrams/imagem.png
+O sistema expõe RESTful APIs para aplicações front-end, como terminais de autoatendimento para clientes e interfaces para administradores.
 
 Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas no projeto.
 
@@ -102,4 +98,4 @@ Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.htm
 
 Baixar o Postman ou o API Client de sua preferência e importar a collection:
 
-[API Client Collection](docs/fiap-techfood-postman-collection.json).
+[API Client Collection](src/main/resources/collection/fiap_techfood_postman_collection.json).
