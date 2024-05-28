@@ -91,15 +91,11 @@ $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
 ````
 $ cd tech-challenge-app
 ````
-4. Build o projeto rodando o comando:
+4. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código:
 ```shell
-./gradlew clean build
+docker-compose up --build
 ```
-5. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código:
-```shell
-docker-compose -f docker-compose.yml up -d
-```
-6. Caso precise fazer um reset no ambiente, usar o comando:
+5. Caso precise fazer um reset no ambiente, usar o comando:
 ```shell
 docker compose down --rmi all
 ```
