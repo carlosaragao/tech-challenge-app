@@ -121,4 +121,4 @@ Para vizualizar o Banco de Dados através, recomendamos que baixe o DBeaver ou o
 
 Baixar o Postman ou o API Client de sua preferência e importar a collection:
 
-[API Client Collection](docs/fiap-techfood-postman-collection.json).
+[API Client Collection](src/main/resources/collection/fiap_techfood_postman_collection.json).
