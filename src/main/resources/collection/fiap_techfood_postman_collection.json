@@ -7,6 +7,237 @@
 	},
 	"item": [
 		{
+			"name": "Testes na sequencia",
+			"item": [
+				{
+					"name": "01 - Cadastrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\":\"73986454063\",\r\n    \"name\":\"Joao Lima\",\r\n    \"email\":\"lima.joao@domain.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/clients",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Buscar Client por cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clients/cpf/132",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clients",
+								"cpf",
+								"132"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Fazer pedido com CPF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderItems\": [\n        {\n            \"productId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\",\n            \"quantity\": 3,\n            \"description\": \"Sem Cebola\"\n        },\n        {\n            \"productId\": \"c9bf9e57-1685-4c89-bafb-ff5af830be8a\",\n            \"quantity\": 2,\n            \"description\": \"Sem Maionese\"\n        }\n    ],\n    \"orderName\": \"João M\",\n    \"clientCpf\": \"12345678988\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Fazer pedido anonimo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderItems\": [\n        {\n            \"productId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\",\n            \"quantity\": 3,\n            \"description\": \"Sem Cebola\"\n        },\n        {\n            \"productId\": \"c9bf9e57-1685-4c89-bafb-ff5af830be8a\",\n            \"quantity\": 2,\n            \"description\": \"Sem Maionese\"\n        }\n    ],\n    \"orderName\": \"João M\",\n    \"clientCpf\": \"12345678988\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Listar pedidos \"Esperando Pagamento\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/awaiting-payment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"awaiting-payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Efetuar pagamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/c4935ea9-9a11-4585-8344-8002ff79bf46/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"c4935ea9-9a11-4585-8344-8002ff79bf46",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07 - Listar pedidos \"Pagamento Aprovado\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/approved",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"approved"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08 - Iniciar Preparo do pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/c4935ea9-9a11-4585-8344-8002ff79bf46/prepare",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"c4935ea9-9a11-4585-8344-8002ff79bf46",
+								"prepare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09 - Listar pedidos \"Em Preparo\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/prepared",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"prepared"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10 - Finalizar pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/c4935ea9-9a11-4585-8344-8002ff79bf46/finish",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"c4935ea9-9a11-4585-8344-8002ff79bf46",
+								"finish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11 - Listar pedidos \"Prontos\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/finished",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"finished"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Client",
 			"item": [
 				{
@@ -275,7 +506,7 @@
 					"response": []
 				},
 				{
-					"name": "Prepare Order",
+					"name": "Start Prepare Order",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -349,7 +580,7 @@
 					"response": []
 				},
 				{
-					"name": "All Orders Prepared",
+					"name": "All Orders Preparing",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -397,146 +628,6 @@
 							"path": [
 								"orders",
 								"c4935ea9-9a11-4585-8344-8002ff79bf46"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Testes na sequencia",
-			"item": [
-				{
-					"name": "Cadastrar Cliente",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"cpf\":\"73986454063\",\r\n    \"name\":\"Joao Lima\",\r\n    \"email\":\"lima.joao@domain.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/clients",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"clients"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Fazer pedido com CPF",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"orderItems\": [\n        {\n            \"productId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\",\n            \"quantity\": 3,\n            \"description\": \"Sem Cebola\"\n        },\n        {\n            \"productId\": \"c9bf9e57-1685-4c89-bafb-ff5af830be8a\",\n            \"quantity\": 2,\n            \"description\": \"Sem Maionese\"\n        }\n    ],\n    \"orderName\": \"João M\",\n    \"clientCpf\": \"12345678988\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/orders",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Fazer pedido anonimo",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"orderItems\": [\n        {\n            \"productId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\",\n            \"quantity\": 3,\n            \"description\": \"Sem Cebola\"\n        },\n        {\n            \"productId\": \"c9bf9e57-1685-4c89-bafb-ff5af830be8a\",\n            \"quantity\": 2,\n            \"description\": \"Sem Maionese\"\n        }\n    ],\n    \"orderName\": \"João M\",\n    \"clientCpf\": \"12345678988\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/orders",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Efetuar pagamento",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/orders/c4935ea9-9a11-4585-8344-8002ff79bf46/pay",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders",
-								"c4935ea9-9a11-4585-8344-8002ff79bf46",
-								"pay"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Preparar pedido",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/orders/c4935ea9-9a11-4585-8344-8002ff79bf46/prepare",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders",
-								"c4935ea9-9a11-4585-8344-8002ff79bf46",
-								"prepare"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Finalizar pedido",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/orders/c4935ea9-9a11-4585-8344-8002ff79bf46/finish",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders",
-								"c4935ea9-9a11-4585-8344-8002ff79bf46",
-								"finish"
 							]
 						}
 					},

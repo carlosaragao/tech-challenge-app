@@ -1,24 +1,34 @@
-# Use OpenJDK 17 as base image
-FROM openjdk:17
+# Stage 1: Build the application
+FROM gradle:7.3.3-jdk17 as builder
 
-# Argument to specify the JAR file name
-ARG JAR_FILE="techfood-0.0.1-SNAPSHOT.jar"
-
-# Create a non-root user to run the application
-RUN groupadd -r appgroup && useradd -r -g appgroup appuser
-
-# Switch to the non-root user
-USER appuser:appgroup
-
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Copy the compiled JAR file into the container
-#COPY target/${JAR_FILE} /app/${JAR_FILE}
-ADD ./build/libs/${JAR_FILE} .
+# Copy the Gradle wrapper and settings files
+COPY gradlew .
+COPY gradle /app/gradle
 
-# Expose the port your application runs on
+# Copy the project files
+COPY build.gradle.kts settings.gradle.kts ./
+COPY src /app/src
+
+# Make the Gradle wrapper executable
+RUN chmod +x gradlew
+
+# Build the project
+RUN ./gradlew build
+
+# Stage 2: Run the application
+FROM openjdk:17-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the built jar from the build stage and rename it to techfood-0.0.1-SNAPSHOT.jar
+COPY --from=builder /app/build/libs/*.jar techfood-0.0.1-SNAPSHOT.jar
+
+# Expose the application port
 EXPOSE 8080
 
-# Command to run the JAR file
-CMD ["java", "-jar", "techfood-0.0.1-SNAPSHOT.jar"]
+# Command to run the application
+ENTRYPOINT ["java", "-jar", "techfood-0.0.1-SNAPSHOT.jar"]
