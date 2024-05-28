@@ -16,7 +16,8 @@ fun Order.toEntity(): OrderEntity {
         isAnonymous = this.isAnonymous,
         client = this.client?.toEntity(),
         creationDate = LocalDateTime.now(),
-        lastUpdateDate = LocalDateTime.now()
+        lastUpdateDate = LocalDateTime.now(),
+        timeToPrepare = this.timeToPrepare
     )
     orderEntity.items = this.items?.map { it.toEntity(orderEntity) } ?: listOf()
     return orderEntity
@@ -40,7 +41,8 @@ fun OrderEntity.toDomain(): Order {
         status = this.status,
         isAnonymous = this.isAnonymous,
         client = this.client?.toDomain(),
-        items = this.items.map { it.toDomain() }
+        items = this.items.map { it.toDomain() },
+        timeToPrepare = this.timeToPrepare
     )
 }
 
