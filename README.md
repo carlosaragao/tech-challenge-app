@@ -84,11 +84,11 @@ Para executar o sistema, siga as instruções abaixo:
 
 1. Certifique-se de ter o Docker e o Docker Compose instalados em seu computador.
 2. Clone o repositório, no terminal executando o comando:
-```shell
+```
 $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
 ```
 3. Entre na pasta do projeto:
-```shell
+```
 $ cd tech-challenge-app
 ```
 4. Build o projeto rodando o comando:
