@@ -76,29 +76,17 @@ Para executar o sistema, siga as instruções abaixo:
 3. Entre na pasta do projeto: `$ cd tech-challenge-app`
 4. Build o projeto rodando o comando:
 ```shell
-./gradle clean build
+./gradlew clean build
 ```
-5. Subindo o ambiente completo em modo detached:
+5. Subindo o ambiente completo com alguns dados no database:
 ```shell
-docker compose up --build -d
+docker-compose -f docker-compose.yml up -d
 ```
 6. Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
 
 ### Acessando Swagger
 
 Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
-
-### Ambiente de desenvolvimento
-O ambiente de desenvolvimento já sobe com alguns dados no banco, para facilitar o processo de testes de código.
-
-Para subir o ambiente de desenvolvimento utilize o comando: 
-```shell
-docker compose -f docker-compose-dev.yml up
-```
-Se for necessário fazer um reset no ambiente, pode usar o comando: 
-```shell
-docker compose -f docker-compose-dev.yml down --rmi all
-```
 
 ### Banco de dados
 - Baixe o DBeaver ou Gerenciador de banco de dados para PostgreSQL de sua preferência:
