@@ -1,4 +1,18 @@
-### TechFood - Sistema de Autoatendimento para Restaurante FastFood
+# TechFood - Sistema de Autoatendimento para Restaurante FastFood
+
+## Índice
+
+- [Visão Geral](#visão-geral)
+- [Requisitos](#requisitos)
+- [Domain-Driven Development (DDD)](#domain-driven-development-ddd)
+- [Arquitetura](#arquitetura)
+- [Funcionalidades Principais](#funcionalidades-principais)
+- [Principais Tecnologias Utilizadas](#principais-tecnologias-utilizadas)
+- [APIs Disponíveis](#apis-disponíveis)
+- [Como Executar](#como-executar)
+- [Acessando Swagger](#acessando-swagger)
+- [Banco de dados](#banco-de-dados)
+- [Postman Collection](#postman-collection)
 
 ### Visão Geral
 
@@ -6,32 +20,32 @@ Este é um projeto do curso de Pós-graduação em Arquitetura de Software da FI
 
 Autores membros do Grupo:
 
-- Geraldo Moratto Junior
-- Pedro Cantarelli
-- Vinicius Lopes
+- Geraldo Moratto Junior - RM356285
+- Pedro Cantarelli - RM355410
+- Vinicius Lopes - RM354901
 
 ### Requisitos
 
 Em geral os clientes e administradores usarão o sistema, que dependerá de um serviço de pagamento externo.
 
->> IMAGEM DO DIAGRAMA DE CONTEXTO AQUI
+No atual momento, os requisitos do sistema são:
 
-[Documentação](docs/requirements.md) para conhecer todos os requisitos.
+- Gerenciamento de pedidos, com acompanhamento e pagamento.
+- Gerenciamento de clientes
+- Gerenciamento de produtos e categorias
 
 ### Domain-Driven Development (DDD)
 
 A abordagem utilizada para o desenvolvimento foi a DDD, com as seguintes saídas documentadas:
 
-- Glossário ubíquo (ToDo)
-- Event storming (ToDo)
-- Storytelling (ToDo)
-- Mapa de Contexto (ToDo)
+- Glossário ubíquo (Adicionar imagem ou link da imagem)
+- Event storming (Adicionar imagem ou link da imagem)
+- Storytelling (Adicionar imagem ou link da imagem)
+- Mapa de Contexto (Adicionar imagem ou link da imagem)
 
 ### Arquitetura
 
-O sistema expõe RESTful APIs para aplicações front-end, como terminais de autoatendimento para clientes e interfaces para administradores. Tem como dependência um provedor externo de pagamento, o MercadoPago. As decisões de arquitetura foram documentadas como Architecture Decision Records (ADRs) em [`/docs/adr`](docs/adr).
-
->> IMAGEM DO DIAGRAMA DE CONTEINER AQUI, INCLUIR EM docs/diagrams/imagem.png
+O sistema expõe RESTful APIs para aplicações front-end, como terminais de autoatendimento para clientes e interfaces para administradores. Tem como dependência um provedor externo de pagamento, o MercadoPago.
 
 Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas no projeto.
 
@@ -52,11 +66,6 @@ Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas n
 - **Swagger**
 - **Gradle 8**
 
-### Documentação
-
-TODO  
-[Consulte a documentação](docs/README.md) para saber mais.
-
 ### APIs Disponíveis
 
 O TechFood expõe as seguintes APIs para integração:
@@ -67,51 +76,49 @@ O TechFood expõe as seguintes APIs para integração:
 - **Checkout:** API para o checkout de pedidos, enviando os produtos escolhidos para a fila de preparação.
 - **Acompanhamento de Pedidos:** API para listar os pedidos em andamento e o tempo de espera de cada pedido.
 
-### Como Executar em ambiente local
+### Como Executar
+
+#### Em ambiente local
 
 Para executar o sistema, siga as instruções abaixo:
 
 1. Certifique-se de ter o Docker e o Docker Compose instalados em seu computador.
-2. Clone o repositório, no terminal executando o comando: `$ git clone https://github.com/FIAP-7SOAT/tech-challenge-app`
-3. Entre na pasta do projeto: `$ cd tech-challenge-app`
+2. Clone o repositório, no terminal executando o comando:
+````
+$ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
+````
+3. Entre na pasta do projeto:
+````
+$ cd tech-challenge-app
+````
 4. Build o projeto rodando o comando:
 ```shell
-./gradle clean build
+./gradlew clean build
 ```
-5. Subindo o ambiente completo em modo detached:
+5. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código.
+   :
 ```shell
-docker compose up --build -d
+docker-compose -f docker-compose.yml up -d
 ```
-6. Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
 
 ### Acessando Swagger
 
+Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
 Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
 
-### Ambiente de desenvolvimento
-O ambiente de desenvolvimento já sobe com alguns dados no banco, para facilitar o processo de testes de código.
-
-Para subir o ambiente de desenvolvimento utilize o comando: 
-```shell
-docker compose -f docker-compose-dev.yml up
-```
-Se for necessário fazer um reset no ambiente, pode usar o comando: 
-```shell
-docker compose -f docker-compose-dev.yml down --rmi all
-```
-
 ### Banco de dados
-- Baixe o DBeaver ou Gerenciador de banco de dados para PostgreSQL de sua preferência:
 
-- - Criar nova conexão
-- - Host: localhost
-- - Port: 5432
-- - Database: techfood
-- - Username: postgres
-- - Password: postgres
+Para vizualizar o Banco de Dados através, recomendamos que baixe o DBeaver ou outro Gerenciador de banco de dados para PostgreSQL de sua preferência:
+
+- Criar nova conexão
+- Host: localhost
+- Port: 5432
+- Database: techfood
+- Username: postgres
+- Password: postgres
 
 ### Postman Collection
 
 Baixar o Postman ou o API Client de sua preferência e importar a collection:
 
-[API Client Collection](docs/fiap-techfood-postman-collection.json).
+[API Client Collection](src/main/resources/collection/fiap_techfood_postman_collection.json).
