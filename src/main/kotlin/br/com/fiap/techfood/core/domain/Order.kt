@@ -10,4 +10,5 @@ data class Order(
     var status: OrderStatusEnum = OrderStatusEnum.AWAITING_PAYMENT,
     var isAnonymous: Boolean? = true,
     var client: Client? = null,
+    var timeToPrepare: Int? = null
 )

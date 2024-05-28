@@ -95,10 +95,13 @@ $ cd tech-challenge-app
 ```shell
 ./gradlew clean build
 ```
-5. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código.
-   :
+5. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código:
 ```shell
 docker-compose -f docker-compose.yml up -d
+```
+6. Caso precise fazer um reset no ambiente, usar o comando:
+```shell
+docker compose down --rmi all
 ```
 
 ### Acessando Swagger

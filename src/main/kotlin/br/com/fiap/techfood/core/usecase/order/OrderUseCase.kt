@@ -24,7 +24,8 @@ class OrderUseCase(
             items = orderRequest.orderItems,
             status = OrderStatusEnum.AWAITING_PAYMENT,
             isAnonymous = client == null,
-            client = client
+            client = client,
+            timeToPrepare = 0
         )
 
         return orderOutput.save(order)
@@ -60,7 +61,12 @@ class OrderUseCase(
     override fun prepareOrder(id: UUID) {
         val order = orderOutput.findById(id)
         order.status = OrderStatusEnum.PREPARED
+        order.timeToPrepare = calculateTimeToPrepare(order)
         orderOutput.save(order)
+    }
+
+    fun calculateTimeToPrepare(order: Order): Int {
+        return 15 // 15 minutos por pedido
     }
 
     override fun finishOrder(id: UUID) {

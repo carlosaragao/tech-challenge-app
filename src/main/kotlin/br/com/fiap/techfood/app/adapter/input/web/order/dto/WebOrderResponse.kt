@@ -11,5 +11,6 @@ data class WebOrderResponse (
     var items: List<OrderItem>? = null,
     var status: OrderStatusEnum = OrderStatusEnum.AWAITING_PAYMENT,
     var isAnonymous: Boolean? = true,
-    var client: Client? = null
+    var client: Client? = null,
+    val timeToPrepare: Int? = null
 )

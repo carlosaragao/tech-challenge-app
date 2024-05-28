@@ -13,7 +13,8 @@ fun Order.toOrderResponse(): WebOrderResponse =
         items = this.items,
         status = this.status,
         isAnonymous = this.isAnonymous,
-        client = this.client
+        client = this.client,
+        timeToPrepare = this.timeToPrepare
     )
 
 fun WebOrderRequest.toDomainOrderRequest(): DomainOrderRequest {

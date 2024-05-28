@@ -23,6 +23,8 @@ data class OrderEntity(
     @OneToMany(mappedBy = "id.order", cascade = [CascadeType.ALL], orphanRemoval = true)
     var items: List<OrderItemEntity> = listOf(),
 
+    var timeToPrepare: Int? = null,
+
     @ManyToOne
     @JoinColumn(name = "client_id", foreignKey = ForeignKey(name = "fk_order_client"))
     var client: ClientEntity? = null,

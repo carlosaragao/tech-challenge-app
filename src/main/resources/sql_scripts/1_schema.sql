@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS tb_orders (
     name VARCHAR(255) NOT NULL,
     status INTEGER NOT NULL,
     is_anonymous BOOLEAN,
+    time_to_prepare INTEGER NOT NULL,
     client_id UUID,
     creation_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     last_update_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
