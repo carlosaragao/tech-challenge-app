@@ -82,7 +82,7 @@ O TechFood expõe as seguintes APIs para integração:
 
 Para executar o sistema, siga as instruções abaixo:
 
-1. Certifique-se de ter o Docker, Docker Compose, Docker Desktop.
+1. Certifique-se de ter o Docker, Docker Compose, Docker Desktop instalados em seu computador.
 2. Clone o repositório, no terminal executando o comando:
 ````
 $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
