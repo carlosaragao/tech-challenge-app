@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kotlin-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kotlin-app
+  template:
+    metadata:
+      labels:
+        app: kotlin-app
+    spec:
+      containers:
+        - name: kotlin-app
+          image: your-kotlin-app-image
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: postgres
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: yourdbname
+            - name: DB_USER
+              value: youruser
+            - name: DB_PASSWORD
+              value: yourpassword
