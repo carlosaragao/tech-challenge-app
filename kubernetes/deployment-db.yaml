@@ -1,4 +1,3 @@
-# postgres-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,11 +19,20 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_DB
-              value: "techfood"
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: POSTGRES_DB
             - name: POSTGRES_PASSWORD
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: POSTGRES_PASSWORD
             - name: POSTGRES_USER
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: POSTGRES_USER
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data
@@ -35,5 +43,5 @@ spec:
           persistentVolumeClaim:
             claimName: postgres-pvc
         - name: postgres-scripts
-          hostPath:
-            path: /Users/pcantarelli/Documents/FIAP/tech-challenge-app/src/main/resources/sql_script
+          configMap:
+            name: postgres-init-scripts
