@@ -65,6 +65,7 @@ Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas n
 - **Docker**
 - **Swagger**
 - **Gradle 8**
+- **Kubernetes**
 
 ### APIs Disponíveis
 
@@ -78,7 +79,7 @@ O TechFood expõe as seguintes APIs para integração:
 
 ### Como Executar
 
-#### Em ambiente local
+#### 
 
 Para executar o sistema, siga as instruções abaixo:
 
@@ -91,19 +92,9 @@ $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
 ````
 $ cd tech-challenge-app
 ````
-4. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código:
-```shell
-docker-compose up --build
-```
-5. Caso precise fazer um reset no ambiente, usar o comando:
-```shell
-docker compose down --rmi all
-```
-
-### Acessando Swagger
-
-Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
-Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
+4. Escolha como quer executar
+- [Docker](docker-doc.md)
+- [Kubernetes](kubernetes-doc.md)
 
 ### Banco de dados
 
@@ -115,6 +106,11 @@ Para vizualizar o Banco de Dados através, recomendamos que baixe o DBeaver ou o
 - Database: techfood
 - Username: postgres
 - Password: postgres
+
+### Acessando Swagger
+
+Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
+Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
 
 ### Postman Collection
 
