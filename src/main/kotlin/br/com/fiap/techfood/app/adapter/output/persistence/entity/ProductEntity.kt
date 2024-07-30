@@ -13,7 +13,7 @@ import java.util.*
 @Table(name = "TB_PRODUCTS")
 class ProductEntity(
     @Id
-    var id: UUID? = null,
+    var id: UUID?,
 
     @Column(nullable = false)
     var name: String? = null,

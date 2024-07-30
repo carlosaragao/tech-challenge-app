@@ -1,10 +1,10 @@
 package br.com.fiap.techfood.core.domain
 
 import java.math.BigDecimal
-import java.util.*
+import java.util.UUID
 
 data class Product(
-    var id: UUID? = null,
+    val id: UUID?,
     var name: String?,
     var description: String?,
     var price: BigDecimal?,

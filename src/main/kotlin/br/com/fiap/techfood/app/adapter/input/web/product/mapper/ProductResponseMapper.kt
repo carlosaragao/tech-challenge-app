@@ -9,6 +9,7 @@ import java.util.*
 
 fun Product.toProductResponse(): ProductResponse =
     ProductResponse(
+        id = this.id,
         name = this.name,
         description = this.description,
         price = this.price,
@@ -18,11 +19,12 @@ fun Product.toProductResponse(): ProductResponse =
 
 fun ProductVO.toProductResponse(): ProductResponse =
     ProductResponse(
-        name,
-        description,
-        price,
-        CategoryEnum.toEnum(this.category),
-        imageURL,
+        id = this.id,
+        name = this.name,
+        description = this.description,
+        price = this.price,
+        category = CategoryEnum.toEnum(this.category),
+        imageURL = this.imageURL
     )
 
 fun ProductRequest.toDomain(): Product =

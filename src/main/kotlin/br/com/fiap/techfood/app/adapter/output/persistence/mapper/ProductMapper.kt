@@ -26,6 +26,7 @@ fun ProductEntity.toDomain(): Product =
 
 fun ProductEntity.toProductVO(): ProductVO =
     ProductVO(
+        id = this.id,
         name = this.name,
         description = this.description,
         price = this.price,

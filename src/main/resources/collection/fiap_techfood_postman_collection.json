@@ -10,7 +10,120 @@
 			"name": "Testes na sequencia",
 			"item": [
 				{
-					"name": "01 - Cadastrar Cliente",
+					"name": "01 - Listar Cardapio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Listar Lanches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/category?name=SNACK",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "SNACK"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Listar Acompanhamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/category?name=SNACK",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "SNACK"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Listar Bebidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/category?name=SNACK",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "SNACK"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Listar Sobremesas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/category?name=SNACK",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "SNACK"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Cadastrar Cliente",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -36,7 +149,7 @@
 					"response": []
 				},
 				{
-					"name": "02 - Buscar Client por cpf",
+					"name": "07 - Buscar Client por cpf",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -55,7 +168,7 @@
 					"response": []
 				},
 				{
-					"name": "03 - Fazer pedido com CPF",
+					"name": "08 - Fazer pedido com CPF",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -81,7 +194,7 @@
 					"response": []
 				},
 				{
-					"name": "04 - Fazer pedido anonimo",
+					"name": "09 - Fazer pedido anonimo",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -107,7 +220,7 @@
 					"response": []
 				},
 				{
-					"name": "05 - Listar pedidos \"Esperando Pagamento\"",
+					"name": "10 - Listar pedidos \"Esperando Pagamento\"",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -125,7 +238,7 @@
 					"response": []
 				},
 				{
-					"name": "06 - Efetuar pagamento",
+					"name": "11 - Efetuar pagamento",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -144,7 +257,43 @@
 					"response": []
 				},
 				{
-					"name": "07 - Listar pedidos \"Pagamento Aprovado\"",
+					"name": "12 - Listar pedidos \"Prontos/Finalizado\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/finished",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"finished"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 - Listar pedidos \"Em Preparo\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/prepared",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"prepared"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14 - Listar pedidos \"Pagamento Aprovado\"",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -162,7 +311,7 @@
 					"response": []
 				},
 				{
-					"name": "08 - Iniciar Preparo do pedido",
+					"name": "15 - Iniciar Preparo do pedido",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -181,25 +330,7 @@
 					"response": []
 				},
 				{
-					"name": "09 - Listar pedidos \"Em Preparo\"",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/orders/prepared",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders",
-								"prepared"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "10 - Finalizar pedido",
+					"name": "16 - Finalizar pedido",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -212,24 +343,6 @@
 								"orders",
 								"c4935ea9-9a11-4585-8344-8002ff79bf46",
 								"finish"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "11 - Listar pedidos \"Prontos\"",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/orders/finished",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"orders",
-								"finished"
 							]
 						}
 					},

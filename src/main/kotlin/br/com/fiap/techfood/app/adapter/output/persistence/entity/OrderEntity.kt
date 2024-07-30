@@ -10,7 +10,7 @@ import java.util.*
 data class OrderEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    var id: UUID? = null,
+    var id: UUID,
 
     @Column(nullable = false)
     var name: String? = null,
