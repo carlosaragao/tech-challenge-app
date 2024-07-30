@@ -36,12 +36,12 @@ No atual momento, os requisitos do sistema são:
 
 ### Domain-Driven Development (DDD)
 
-A abordagem utilizada para o desenvolvimento foi a DDD, com as seguintes saídas documentadas:
+A abordagem utilizada para o desenvolvimento foi a DDD, com as seguintes saídas:
 
-- Glossário ubíquo (Adicionar imagem ou link da imagem)
-- Event storming (Adicionar imagem ou link da imagem)
-- Storytelling (Adicionar imagem ou link da imagem)
-- Mapa de Contexto (Adicionar imagem ou link da imagem)
+- [Glossário ubíquo](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=217-13086&t=TfMJyuLNDTmXck6Z-4) 
+- [Event storming](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=0-1&t=TfMJyuLNDTmXck6Z-0)
+- Storytelling 
+- Mapa de Contexto 
 
 ### Arquitetura
 
@@ -82,7 +82,7 @@ O TechFood expõe as seguintes APIs para integração:
 
 Para executar o sistema, siga as instruções abaixo:
 
-1. Certifique-se de ter o Docker e o Docker Compose instalados em seu computador.
+1. Certifique-se de ter o Docker, Docker Compose, Docker Desktop instalados em seu computador.
 2. Clone o repositório, no terminal executando o comando:
 ````
 $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
