@@ -49,6 +49,21 @@ O sistema expõe RESTful APIs para aplicações front-end, como terminais de aut
 
 Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas no projeto.
 
+#### Recursos provisionados no Kubernetes
+Lista de arquivos YAML com recursos do Kubernetes:
+
+- **config-db.yaml:** Configurações necessárias para o funcionamento do banco de dados;
+- **deployment-app.yaml:** Deployment para disponibilização da aplicação;
+- **deployment-db.yaml:** Deployment para disponibilização do banco de dados;
+- **hpa-app.yaml:** Mapeamento de quantidade de réplicas para escalabilidade da aplicação;
+- **pv-db.yaml:** Mapeamento de persistência de volume para os arquivos de banco de dados;
+- **pvc-db.yaml:** Mapeamento de persistência de volume com configuração de claims para os volumes do banco de dados;
+- **secrets.yaml:** Armazenamento das chaves/tokens para a API;
+- **service-app.yaml:** Mapeamento das portar para acesso ao serviço NodePort da aplicação;
+- **service-db.yaml:** Mapeamento das portas para acesso ao serviço ClusterIP de banco de dados;
+
+![Arquitetura Kubernetes](https://i.imgur.com/GXjyJq9.png)
+
 ### Funcionalidades Principais
 
 - **Pedido Personalizado:** Os clientes podem criar pedidos personalizados, escolhendo entre uma variedade de itens, como lanches, acompanhamentos, bebidas e sobremesas.
@@ -78,8 +93,6 @@ O TechFood expõe as seguintes APIs para integração:
 - **Acompanhamento de Pedidos:** API para listar os pedidos em andamento e o tempo de espera de cada pedido.
 
 ### Como Executar
-
-#### 
 
 Para executar o sistema, siga as instruções abaixo:
 
@@ -117,3 +130,7 @@ Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.htm
 Baixar o Postman ou o API Client de sua preferência e importar a collection:
 
 [API Client Collection](src/main/resources/collection/fiap_techfood_postman_collection.json).
+
+### Video da Arquitetura
+
+[Funcionamento da apliação](https://www.youtube.com/watch?v=33iDsv87Nnc&ab_channel=PedroCantarelli).
