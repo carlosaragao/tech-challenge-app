@@ -49,6 +49,23 @@ O sistema expõe RESTful APIs para aplicações front-end, como terminais de aut
 
 Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas no projeto.
 
+#### Recursos provisionados no Kubernetes
+Lista de arquivos YAML com recursos do Kubernetes:
+
+- **config-db.yaml:** Configurações necessárias para o funcionamento do banco de dados;
+- **deployment-app.yaml:** Deployment para disponibilização da aplicação;
+- **deployment-db.yaml:** Deployment para disponibilização do banco de dados;
+- **hpa-app.yaml:** Mapeamento de quantidade de réplicas para escalabilidade da aplicação;
+- **pv-db.yaml:** Mapeamento de persistência de volume para os arquivos de banco de dados;
+- **pvc-db.yaml:** Mapeamento de persistência de volume com configuração de claims para os volumes do banco de dados;
+- **secrets.yaml:** Armazenamento das chaves/tokens para a API;
+- **service-app.yaml:** Mapeamento das portar para acesso ao serviço NodePort da aplicação;
+- **service-db.yaml:** Mapeamento das portas para acesso ao serviço ClusterIP de banco de dados;
+
+[Arquitetura Kubernetes](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=0-1&t=W1aQzvEzhq0IOrMn-0)
+![Arquitetura Kubernetes](https://i.imgur.com/GXjyJq9.png)
+
+
 ### Funcionalidades Principais
 
 - **Pedido Personalizado:** Os clientes podem criar pedidos personalizados, escolhendo entre uma variedade de itens, como lanches, acompanhamentos, bebidas e sobremesas.
@@ -65,6 +82,7 @@ Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas n
 - **Docker**
 - **Swagger**
 - **Gradle 8**
+- **Kubernetes**
 
 ### APIs Disponíveis
 
@@ -78,8 +96,6 @@ O TechFood expõe as seguintes APIs para integração:
 
 ### Como Executar
 
-#### Em ambiente local
-
 Para executar o sistema, siga as instruções abaixo:
 
 1. Certifique-se de ter o Docker, Docker Compose, Docker Desktop instalados em seu computador.
@@ -91,19 +107,9 @@ $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
 ````
 $ cd tech-challenge-app
 ````
-4. Subindo o ambiente com alguns dados no banco, para facilitar o processo de testes de código:
-```shell
-docker-compose up --build
-```
-5. Caso precise fazer um reset no ambiente, usar o comando:
-```shell
-docker compose down --rmi all
-```
-
-### Acessando Swagger
-
-Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
-Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
+4. Escolha como quer executar
+- [Docker](docker-doc.md)
+- [Kubernetes](kubernetes-doc.md)
 
 ### Banco de dados
 
@@ -116,8 +122,18 @@ Para vizualizar o Banco de Dados através, recomendamos que baixe o DBeaver ou o
 - Username: postgres
 - Password: postgres
 
+### Acessando Swagger
+
+Acesse a documentação da API através do Swagger para começar a interagir com o sistema.
+Para acessar o Swagger utilize a url [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
+
 ### Postman Collection
 
 Baixar o Postman ou o API Client de sua preferência e importar a collection:
 
 [API Client Collection](src/main/resources/collection/fiap_techfood_postman_collection.json).
+
+### Video da Arquitetura
+
+[Funcionamento da apliação](https://www.youtube.com/watch?v=33iDsv87Nnc&ab_channel=PedroCantarelli).
+[Arquitetura do Projeto](https://www.youtube.com/watch?v=a7mExdMBwO4&ab_channel=PedroCantarelli)
