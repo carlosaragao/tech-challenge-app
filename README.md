@@ -62,7 +62,9 @@ Lista de arquivos YAML com recursos do Kubernetes:
 - **service-app.yaml:** Mapeamento das portar para acesso ao serviço NodePort da aplicação;
 - **service-db.yaml:** Mapeamento das portas para acesso ao serviço ClusterIP de banco de dados;
 
+[Arquitetura Kubernetes](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=0-1&t=W1aQzvEzhq0IOrMn-0)
 ![Arquitetura Kubernetes](https://i.imgur.com/GXjyJq9.png)
+
 
 ### Funcionalidades Principais
 
@@ -134,3 +136,4 @@ Baixar o Postman ou o API Client de sua preferência e importar a collection:
 ### Video da Arquitetura
 
 [Funcionamento da apliação](https://www.youtube.com/watch?v=33iDsv87Nnc&ab_channel=PedroCantarelli).
+[Arquitetura do Projeto](https://www.youtube.com/watch?v=a7mExdMBwO4&ab_channel=PedroCantarelli)
