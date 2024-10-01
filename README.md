@@ -38,10 +38,10 @@ No atual momento, os requisitos do sistema são:
 
 A abordagem utilizada para o desenvolvimento foi a DDD, com as seguintes saídas:
 
-- [Glossário ubíquo](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=217-13086&t=TfMJyuLNDTmXck6Z-4) 
+- [Glossário ubíquo](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=217-13086&t=TfMJyuLNDTmXck6Z-4)
 - [Event storming](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=0-1&t=TfMJyuLNDTmXck6Z-0)
-- Storytelling 
-- Mapa de Contexto 
+- Storytelling
+- Mapa de Contexto
 
 ### Arquitetura
 
@@ -50,6 +50,7 @@ O sistema expõe RESTful APIs para aplicações front-end, como terminais de aut
 Arquitetura Hexagonal (Ports and Adapters) e Clean Architecture foram adotadas no projeto.
 
 #### Recursos provisionados no Kubernetes
+
 Lista de arquivos YAML com recursos do Kubernetes:
 
 - **config-db.yaml:** Configurações necessárias para o funcionamento do banco de dados;
@@ -64,7 +65,6 @@ Lista de arquivos YAML com recursos do Kubernetes:
 
 [Arquitetura Kubernetes](https://www.figma.com/board/JpMG7uY03GHnNY92hHxdb3/Lanchonete-de-Bairro?node-id=0-1&t=W1aQzvEzhq0IOrMn-0)
 ![Arquitetura Kubernetes](https://i.imgur.com/GXjyJq9.png)
-
 
 ### Funcionalidades Principais
 
@@ -100,18 +100,25 @@ Para executar o sistema, siga as instruções abaixo:
 
 1. Certifique-se de ter o Docker, Docker Compose, Docker Desktop instalados em seu computador.
 2. Clone o repositório, no terminal executando o comando:
-````
+
+```
 $ git clone https://github.com/FIAP-7SOAT/tech-challenge-app
-````
+```
+
 3. Entre na pasta do projeto:
-````
+
+```
 $ cd tech-challenge-app
-````
+```
+
 4. Escolha como quer executar
-- [Docker](docker-doc.md)
-- [Kubernetes](kubernetes-doc.md)
+
+- [Docker](docs/docker.md)
+- [Kubernetes](docs/kubernetes.md)
 
 ### Banco de dados
+
+Leia a documentação do banco de dados [aqui](docs/database.md)
 
 Para vizualizar o Banco de Dados através, recomendamos que baixe o DBeaver ou outro Gerenciador de banco de dados para PostgreSQL de sua preferência:
 

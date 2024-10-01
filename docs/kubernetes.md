@@ -1,12 +1,6 @@
 # kubectl cli commands
 
-Para gerar um arquivo de configmap para o Postgres com base em nossos SQL scripts (**execute na pasta raiz**). Só precisa rodar de novo caso os scripts sejam atualizados
-
-```
-kubectl create configmap postgres-init-scripts --from-file=src/main/resources/sql_scripts/ -o yaml --dry-run=client > kubernetes/config-db.yaml
-```
-
-#### Os comandos abaixo devem ser executados na pasta do Kubernetes (`cd kubernetes`)]
+## Os comandos abaixo devem ser executados na pasta do Kubernetes (`cd kubernetes`)]
 
 1. Para aplicar nosso Secret
 
@@ -72,4 +66,10 @@ kubectl apply -f hpa-app.yaml
 
 ```
 kubectl port-forward svc/techfood-app 8080:8080
+```
+
+Para gerar um arquivo de configmap para o Postgres com base em nossos SQL scripts (**execute na pasta raiz**). Só precisa rodar de novo caso os scripts sejam atualizados
+
+```
+kubectl create configmap postgres-init-scripts --from-file=src/main/resources/sql_scripts/ -o yaml --dry-run=client > kubernetes/config-db.yaml
 ```
